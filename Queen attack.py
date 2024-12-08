@@ -1,9 +1,10 @@
+#https://exercism.org/tracks/python/exercises/queen-attack/
+
 class Queen:
     def __init__(self, row, column):
 
         self.row = row
         self.column = column
-        
         
         if self.row < 0:
             raise ValueError("row not positive")
@@ -17,20 +18,15 @@ class Queen:
         if self.column > 7:
             raise ValueError("column not on board")
 
-        
-        pass
-        # self.row e self.column e ver se estao dentro dos valores possiveis, de 0 a 7 ou 1 a 8, conforme estruturado
-
     def can_attack(self, another_queen):
-        # receber outro objecto. fazer another_queen.row ou another_queen.column
+        """Possibility of queens attack"""
         if self.row == another_queen.row and self.column == another_queen.column:
             raise ValueError("Invalid queen position: both queens in the same square")
+        #Verification of queens position by row and column
+        if self.row == another_queen.row or self.column == another_queen.column:
+            return True
+        #Verification of queens position by diagonal point of view
+        elif abs(self.row - another_queen.row) == abs(self.column - another_queen.column):
+            return True
         else:
-            if self.row == another_queen.row or self.column == another_queen.column:
-                return True
-            elif abs(self.row - another_queen.row) == abs(self.column - another_queen.column):
-                 return True
-            else:
-                return False
-
-        pass
+            return False
