@@ -4,6 +4,7 @@ class Queen:
         self.row = row
         self.column = column
         
+        
         if self.row < 0:
             raise ValueError("row not positive")
 
