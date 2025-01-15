@@ -1,16 +1,16 @@
 def saddle_points(matrix):
 
-    """Returns the reversed String.
+    """Saddle points exercise. 
+    Detect saddle points in a matrix, being the point on a surface at which the height is maximum in one direction and minimum in another (for example, in the perpendicular direction).
+
+    Parameters: matrix - provides the data as grids that show the heights of the trees. The rows of the grid represent the east-west direction, and the columns represent the north-south direction.
     
-
-    #Parameters:
-    #    str1 (str):The string which is to be reversed.
-
-    #Returns:
-    #    reverse(str1):The string which gets reversed.List of dictionary com os valores da linha e coluna da arvore candidata"""
+    Returns:
+    candidates - list of dictionary with the position in the matrix of the candidate tree"""
     
     if not matrix:
-        return []  # Return empty matrix
+        return []  # Return empty list
+    
     first_row_length = len(matrix[0])
     for row in matrix:
         if len(row) != first_row_length:
