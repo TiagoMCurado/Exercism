@@ -1,7 +1,17 @@
+"""Solution to the phone number exercise.
+https://exercism.org/tracks/python/exercises/phone-number"""
+
 import re
 
 class PhoneNumber:
-    def __init__(self, number):
+    def __init__(self, number): 
+        """Phone number exercise. 
+        Clean up and formatting valid phone numbers, for use in the system.
+
+         Parameters
+         -------- 
+         number : str
+            Differently formatted telephone numbers """
 
         if re.search(r'[@:!]+', number):
             raise ValueError("punctuations not permitted")
@@ -44,4 +54,8 @@ class PhoneNumber:
         self.area_code = self.number[:3]
                   
     def pretty(self):
+        """Output of the phone number in a specific format. Phone number format example ("(223)-456-7890")
+
+         Return: str
+          String formatted phone number"""
         return f"({self.area_code})-{self.number[3:6]}-{self.number[6:]}"
