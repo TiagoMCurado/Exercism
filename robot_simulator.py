@@ -17,6 +17,7 @@ class Robot:
         self.coordinates = (x_pos, y_pos)
         self.direction = direction
 
+
     def moveRight(self):
 
         self.direction = (self.direction - 1) % 4
