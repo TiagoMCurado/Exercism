@@ -13,21 +13,31 @@ class Robot:
     so a turn to the east/west or a forward movement is carried out first."""
 
     def __init__(self, direction=NORTH, x_pos: int = 0, y_pos: int = 0):
+        """method that specifies the initial position of the robot on the abscissa
+        and ordinate axis, with north as the initial direction.
 
+        Parameters
+        --------
+        direction: NORTH
+        x_pos: int
+        y_pos: int
+        """
         self.coordinates = (x_pos, y_pos)
         self.direction = direction
 
-
     def moveRight(self):
-
+        """Method that allow the robot to turn right in direction,
+        following a different direction."""
         self.direction = (self.direction - 1) % 4
 
     def moveLeft(self):
-
+        """Method that allow the robot to turn left in direction,
+        following a different direction."""
         self.direction = (self.direction + 1) % 4
 
     def advance(self):
-
+        """Method that allow the robot to move forward,
+        following a different coordinate, according to its orientation."""
         if self.direction == NORTH:
             self.coordinates = (self.coordinates[0], self.coordinates[1] + 1)
         elif self.direction == SOUTH:
@@ -38,7 +48,14 @@ class Robot:
             self.coordinates = (self.coordinates[0] + 1, self.coordinates[1])
 
     def move(self, instructions: str):
+        """Move method where we specify the final position of the robot
+        according to the input received (instructions: str) by calling the methods described
+        and implemented previously.
 
+        Parameters
+        --------
+        instructions: str
+        """
         for i in instructions:
             if i == "R":
                 self.moveRight()
