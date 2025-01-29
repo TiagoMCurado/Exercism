@@ -9,9 +9,12 @@ def primes(limit: int):
     Parameters
     --------
     limit: int
+    Highest number up to which the function of the sieve of Eratosthenes is used.
 
     Returns:
     prime_list = list[int]
+    List with all the primes from 2 up to a given
+    number (limit).
     """
 
     if limit == 1:
