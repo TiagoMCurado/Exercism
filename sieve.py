@@ -23,9 +23,9 @@ def primes(limit: int):
 
     primes_list = []
 
-    while candidates_list: 
-        #while create a condition that happens until candidates_list is not empty. 
-        #If candidates_list is empty, while return False.
+    while candidates_list:
+        # while create a condition that happens until candidates_list is not empty.
+        # If candidates_list is empty, while return False.
         p = min(candidates_list)
         primes_list.append(p)
         candidates_list.remove(p)
@@ -35,4 +35,3 @@ def primes(limit: int):
                 candidates_list.remove(c)
 
     return primes_list
-
