@@ -83,6 +83,7 @@ class School:
         """
         return self.adding_list
 
+
 """class School:
     
     def __init__(self):
