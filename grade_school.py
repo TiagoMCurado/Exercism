@@ -30,7 +30,9 @@ class School:
         Parameters
         --------
         name: string
+        Student name added to the list
         grade: int
+        Grade corresponded to each student
         """
 
         if name not in self.student_list:
@@ -44,8 +46,8 @@ class School:
         """Method that provides us with the list of students, sorted by name and grade.
 
         Returns:
-        list(dict_order.keys()): list[str]
-            List of student names ordered by name and grade"""
+        list[str]
+        List of student names ordered by name and grade"""
 
         dict_order = dict(
             sorted(self.grade_list.items(), key=lambda item: (item[1], item[0]))
@@ -59,12 +61,15 @@ class School:
         Parameters
         --------
         grade_number: int
+        Grade corresponding a selected number of students added previously 
 
         Returns:
         temporary_list: list[str]
+        List of students in a selected grade, sorted by name.
         """
-        temporary_list = []  # creation of a temporary list that will give us the list
-        # of students in a selected grade
+        # creation of a temporary list that will give us the list
+        # of students in a selected grade.
+        temporary_list = []  
 
         for key, value in self.grade_list.items():
             if value == grade_number:
@@ -79,10 +84,10 @@ class School:
         has been added to the student_list.
 
         Returns:
-        self.adding_list: list[bool]
+        list[bool]
+        Boolean list of whether or not the student has been added to the student_list.
         """
         return self.adding_list
-
 
 """class School:
     
