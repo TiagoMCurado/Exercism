@@ -46,7 +46,7 @@ class CircularBuffer:
         BufferEmptyException: If the buffer is empty.
 
         Returns:
-        self.buffer.pop(0)
+        Any
         The oldest data in the buffer.
         """
 
